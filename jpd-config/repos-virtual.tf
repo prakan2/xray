@@ -1,71 +1,71 @@
 # team-tech-maturity-locator 
-resource "artifactory_virtual_docker_repository" "dojo-dev-docker" {
-  key                 = "dojo-dev-docker"
-  repositories        = ["dojo-docker-dev-local","dojo-docker-dockerhub","dojo-docker-jfrog"]
-  description         = "Dojo DEV container registry"
+resource "artifactory_virtual_docker_repository" "nishup-dev-docker" {
+  key                 = "nishup-dev-docker"
+  repositories        = ["nishup-docker-dev-local","nishup-docker-dockerhub","nishup-docker-jfrog"]
+  description         = "Nishu DEV container registry"
   notes               = "Created for a specific session"
   includes_pattern    = ""
   excludes_pattern    = ""
-  default_deployment_repo = "dojo-docker-dev-local"
+  default_deployment_repo = "nishup-docker-dev-local"
   depends_on = [
-    artifactory_local_docker_v2_repository.dojo-docker-dev-local, 
-    artifactory_remote_docker_repository.dojo-docker-dockerhub,
-    artifactory_remote_docker_repository.dojo-docker-jfrog
+    artifactory_local_docker_v2_repository.nishup-docker-dev-local, 
+    artifactory_remote_docker_repository.nishup-docker-dockerhub,
+    artifactory_remote_docker_repository.nishup-docker-jfrog
   ]
 }
 
-resource "artifactory_virtual_docker_repository" "dojo-test-docker" {
-  key                 = "dojo-test-docker"
-  repositories        = ["dojo-docker-dev-local","dojo-docker-test-local"]
-  description         = "Dojo TEST container registry"
+resource "artifactory_virtual_docker_repository" "nishup-test-docker" {
+  key                 = "nishup-test-docker"
+  repositories        = ["nishup-docker-dev-local","nishup-docker-test-local"]
+  description         = "Nishu TEST container registry"
   notes               = "Created for a specific session"
   includes_pattern    = ""
   excludes_pattern    = ""
-  default_deployment_repo = "dojo-docker-test-local"
+  default_deployment_repo = "nishup-docker-test-local"
   depends_on = [
-    artifactory_local_docker_v2_repository.dojo-docker-dev-local,
-    artifactory_local_docker_v2_repository.dojo-docker-test-local
+    artifactory_local_docker_v2_repository.nishup-docker-dev-local,
+    artifactory_local_docker_v2_repository.nishup-docker-test-local
   ]
 }
 
-resource "artifactory_virtual_docker_repository" "dojo-qa-docker" {
-  key                 = "dojo-qa-docker"
-  repositories        = ["dojo-docker-test-local","dojo-docker-qa-local"]
-  description         = "Dojo QA container registry"
+resource "artifactory_virtual_docker_repository" "nishup-qa-docker" {
+  key                 = "nishup-qa-docker"
+  repositories        = ["nishup-docker-test-local","nishup-docker-qa-local"]
+  description         = "Nishu QA container registry"
   notes               = "Created for a specific session"
   includes_pattern    = ""
   excludes_pattern    = ""
-  default_deployment_repo = "dojo-docker-qa-local"
+  default_deployment_repo = "nishup-docker-qa-local"
   depends_on = [
-    artifactory_local_docker_v2_repository.dojo-docker-test-local,
-    artifactory_local_docker_v2_repository.dojo-docker-qa-local
+    artifactory_local_docker_v2_repository.nishup-docker-test-local,
+    artifactory_local_docker_v2_repository.nishup-docker-qa-local
   ]
 }
 
-resource "artifactory_virtual_docker_repository" "dojo-prod-docker" {
-  key                 = "dojo-prod-docker"
-  repositories        = ["dojo-docker-qa-local","dojo-docker-prod-local"]
-  description         = "Dojo container registry for production containers"
+resource "artifactory_virtual_docker_repository" "nishup-prod-docker" {
+  key                 = "nishup-prod-docker"
+  repositories        = ["nishup-docker-qa-local","nishup-docker-prod-local"]
+  description         = "Nishu container registry for production containers"
   notes               = "Created for a specific session"
   includes_pattern    = ""
   excludes_pattern    = ""
-  default_deployment_repo = "dojo-docker-prod-local"
+  default_deployment_repo = "nishup-docker-prod-local"
   depends_on = [
-    artifactory_local_docker_v2_repository.dojo-docker-qa-local,
-    artifactory_local_docker_v2_repository.dojo-docker-prod-local
+    artifactory_local_docker_v2_repository.nishup-docker-qa-local,
+    artifactory_local_docker_v2_repository.nishup-docker-prod-local
   ]
 }
 
-resource "artifactory_virtual_docker_repository" "dojo-rip-docker" {
-  key                 = "dojo-rip-docker"
-  repositories        = ["dojo-docker-prod-local","dojo-docker-rip-local"]
-  description         = "Dojo container registry for deprecated containers"
+resource "artifactory_virtual_docker_repository" "nishup-rip-docker" {
+  key                 = "nishup-rip-docker"
+  repositories        = ["nishup-docker-prod-local","nishup-docker-rip-local"]
+  description         = "Nishu container registry for deprecated containers"
   notes               = "Created for a specific session"
   includes_pattern    = ""
   excludes_pattern    = ""
-  default_deployment_repo = "dojo-docker-rip-local"
+  default_deployment_repo = "nishup-docker-rip-local"
   depends_on = [
-    artifactory_local_docker_v2_repository.dojo-docker-prod-local,
-    artifactory_local_docker_v2_repository.dojo-docker-rip-local
+    artifactory_local_docker_v2_repository.nishup-docker-prod-local,
+    artifactory_local_docker_v2_repository.nishup-docker-rip-local
   ]
 }

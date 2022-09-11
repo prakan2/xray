@@ -1,24 +1,24 @@
-resource "artifactory_permission_target" "dojo-docker-development" {
-  name = "dojo-docker-development"
+resource "artifactory_permission_target" "nishup-docker-development" {
+  name = "nishup-docker-development"
 
   repo {
-    repositories    = ["dojo-docker-dev-local","dojo-docker-test-local","dojo-docker-qa-local","dojo-docker-prod-local","dojo-docker-rip-local","dojo-docker-dockerhub","dojo-docker-jfrog"]
+    repositories    = ["nishup-docker-dev-local","nishup-docker-test-local","nishup-docker-qa-local","nishup-docker-prod-local","nishup-docker-rip-local","nishup-docker-dockerhub","nishup-docker-jfrog"]
     
     actions {
       groups {
-        name        = "${artifactory_group.dojo-docker-developers.name}"
+        name        = "${artifactory_group.nishup-docker-developers.name}"
         permissions = ["read","write","annotate","delete","manage","managedXrayMeta"]
       }
     }
   }
 
   build {
-    includes_pattern = ["dojo*/**"]
+    includes_pattern = ["nishup*/**"]
     repositories     = ["artifactory-build-info"]
 
     actions {
       groups {
-        name        = "${artifactory_group.dojo-docker-developers.name}"
+        name        = "${artifactory_group.nishup-docker-developers.name}"
         permissions = ["read","write","annotate","delete","manage","managedXrayMeta"]
       }
     }

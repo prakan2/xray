@@ -1,6 +1,6 @@
 # team-tech-maturity-locator 
-resource "artifactory_remote_docker_repository" "dojo-docker-dockerhub" {
-  key                            = "dojo-docker-dockerhub"
+resource "artifactory_remote_docker_repository" "nishup-docker-dockerhub" {
+  key                            = "nishup-docker-dockerhub"
   external_dependencies_enabled  = true
   enable_token_authentication    = true
   url                            = "https://registry-1.docker.io"
@@ -9,8 +9,8 @@ resource "artifactory_remote_docker_repository" "dojo-docker-dockerhub" {
   store_artifacts_locally        = true 
 }
 
-resource "artifactory_remote_docker_repository" "dojo-docker-jfrog" {
-  key                            = "dojo-docker-jfrog"
+resource "artifactory_remote_docker_repository" "nishup-docker-jfrog" {
+  key                            = "nishup-docker-jfrog"
   external_dependencies_enabled  = true
   enable_token_authentication    = true
   url                            = "https://releases-docker.jfrog.io"
@@ -20,8 +20,8 @@ resource "artifactory_remote_docker_repository" "dojo-docker-jfrog" {
 }
 
 /*
-resource "artifactory_remote_helm_repository" "dojo-helm-artifacthub" {
-  key                            = "dojo-helm-artifacthub"
+resource "artifactory_remote_helm_repository" "nishup-helm-artifacthub" {
+  key                            = "nishup-helm-artifacthub"
   external_dependencies_enabled  = true
   enable_token_authentication    = true
   url                            = "https://artifacthub.io"

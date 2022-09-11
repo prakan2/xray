@@ -1,6 +1,6 @@
-resource "xray_security_policy" "dojo-docker-curation" {
-  name        = "dojo-docker-curation"
-  description = "Dojo Curation Policy for Docker Containers"
+resource "xray_security_policy" "nishup-docker-curation" {
+  name        = "nishup-docker-curation"
+  description = "Nishu Curation Policy for Docker Containers"
   type        = "security"
 
   rule {
@@ -89,9 +89,9 @@ resource "xray_security_policy" "dojo-docker-curation" {
   }  
 }
 
-resource "xray_security_policy" "dojo-docker-prod" {
-  name        = "dojo-docker-prod"
-  description = "Dojo Monitoring Policy for Docker Containers"
+resource "xray_security_policy" "nishup-docker-prod" {
+  name        = "nishup-docker-prod"
+  description = "Nishu Monitoring Policy for Docker Containers"
   type        = "security"
 
   rule {
